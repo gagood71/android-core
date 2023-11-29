@@ -3,6 +3,7 @@ package com.core.pager;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 
@@ -32,9 +33,9 @@ public class PagerLayout extends Pager {
     }
 
     @Override
-    public void initView() {
-        viewPager = mainView.findViewById(R.id.view_pager);
-        tabLayout = mainView.findViewById(R.id.tab_layout);
+    public void initView(View view) {
+        viewPager = view.findViewById(R.id.view_pager);
+        tabLayout = view.findViewById(R.id.tab_layout);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             tabLayout.getRootView().setBackgroundColor(

@@ -2,6 +2,7 @@ package com.core.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
@@ -29,12 +30,8 @@ public class BottomLine extends NormalLinearLayout {
     }
 
     @Override
-    protected void initView() {
-        mainView.setLayoutParams(new LayoutParams(
-                LayoutParams.MATCH_PARENT,
-                LayoutParams.MATCH_PARENT));
-
-        viewLine = mainView.findViewById(R.id.view_line);
+    protected void initView(View view) {
+        viewLine = view.findViewById(R.id.view_line);
     }
 
     @Override

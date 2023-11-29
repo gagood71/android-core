@@ -11,15 +11,14 @@ public abstract class DynamicLinearLayout extends DefaultLinearLayout {
     @Override
     protected void init() {
         try {
-            mainView = View.inflate(getContext(), getViewId(), null);
-            mainView.setLayoutParams(new LayoutParams(
+            View view = View.inflate(getContext(), getViewId(), null);
+            view.setLayoutParams(new LayoutParams(
                     LayoutParams.MATCH_PARENT,
                     LayoutParams.MATCH_PARENT));
 
             removeAllViews();
-            addView(mainView);
-
-            initView();
+            addView(view);
+            initView(view);
             initData();
         } catch (Exception e) {
             e.printStackTrace();
@@ -28,7 +27,7 @@ public abstract class DynamicLinearLayout extends DefaultLinearLayout {
 
     protected abstract int getViewId();
 
-    protected abstract void initView();
+    protected abstract void initView(View view);
 
     protected abstract void initData();
 }

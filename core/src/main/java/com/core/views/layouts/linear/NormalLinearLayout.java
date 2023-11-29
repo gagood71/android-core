@@ -7,8 +7,6 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 public abstract class NormalLinearLayout extends DefaultLinearLayout {
-    protected View mainView;
-
     public NormalLinearLayout(Context context) {
         super(context);
     }
@@ -28,21 +26,20 @@ public abstract class NormalLinearLayout extends DefaultLinearLayout {
     @Override
     protected void init() {
         try {
-            mainView = View.inflate(getContext(), getViewId(), null);
-            mainView.setLayoutParams(new LayoutParams(
+            View view = View.inflate(getContext(), getViewId(), null);
+            view.setLayoutParams(new LayoutParams(
                     LayoutParams.MATCH_PARENT,
                     LayoutParams.MATCH_PARENT));
 
             removeAllViews();
-            addView(mainView);
-
-            initView();
+            addView(view);
+            initView(view);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    protected abstract void initView();
+    protected abstract void initView(View view);
 
     protected abstract int getViewId();
 }
