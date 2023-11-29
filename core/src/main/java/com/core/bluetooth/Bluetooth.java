@@ -19,6 +19,8 @@ import com.core.configuration.Configuration;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.UUID;
@@ -177,21 +179,21 @@ public class Bluetooth {
     }
 
     public String[] getPermissions() {
-        String[] permissions;
+        List<String> permissions = new ArrayList<>();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            permissions = new String[]{
-                    Manifest.permission.BLUETOOTH_ADVERTISE,
-                    Manifest.permission.BLUETOOTH_CONNECT,
-                    Manifest.permission.BLUETOOTH_SCAN
-            };
+            permissions.add(Manifest.permission.BLUETOOTH_ADVERTISE);
+            permissions.add(Manifest.permission.BLUETOOTH_CONNECT);
+            permissions.add(Manifest.permission.BLUETOOTH_SCAN);
         } else {
-            permissions = new String[]{
-                    Manifest.permission.BLUETOOTH_ADMIN,
-                    Manifest.permission.ACCESS_FINE_LOCATION
-            };
+            permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
+            permissions.add(Manifest.permission.BLUETOOTH);
+            permissions.add(Manifest.permission.BLUETOOTH_ADMIN);
         }
 
-        return permissions;
+        String[] permissionArray = new String[permissions.size()];
+        permissions.toArray(permissionArray);
+
+        return permissionArray;
     }
 }
