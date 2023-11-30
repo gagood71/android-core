@@ -14,53 +14,54 @@ import androidx.core.app.ActivityCompat;
 
 import com.core.activities.v1.CompatActivity;
 
-public class BluetoothReceiver extends BroadcastReceiver {
-    CompatActivity<?> activity;
+public class BluetoothReceiver {
+    private static final BroadcastReceiver RECEIVER = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
 
-    BluetoothReceiverListener receiverListener;
+            if (action != null) {
+                Log.e(getClass().getName(), action);
+            }
 
-    public BluetoothReceiver(CompatActivity<?> compatActivity) {
-        activity = compatActivity;
-    }
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        String action = intent.getAction();
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    if (device != null) {
+                        if (device.getBondState() == BluetoothDevice.BOND_NONE) {
+                            // 設備未配對
+                            String message = "{DEVICE_STATE：BOND_NONE" +
+                                    ",DEVICE_NAME：" + device.getName() +
+                                    ",DEVICE_ADDRESS：" + device.getAddress() + "}";
 
-        Log.e(getClass().getName(), action);
+                            Log.e(getClass().getName(), message);
 
-        if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-            BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-
-            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
-                    == PackageManager.PERMISSION_GRANTED) {
-                if (device.getBondState() == BluetoothDevice.BOND_NONE) {
-                    // 設備未配對
-                    String message = "{DEVICE_STATE：BOND_NONE" +
-                            ",DEVICE_NAME：" + device.getName() +
-                            ",DEVICE_ADDRESS：" + device.getAddress() + "}";
-
-                    Log.e(getClass().getName(), message);
-
-                    receiverListener.onActionFound(device);
+                            LISTENER.onActionFound(device);
+                        }
+                    }
                 }
             }
         }
-    }
+    };
 
-    public void start(BluetoothReceiverListener listener) {
+    private static BluetoothReceiverListener LISTENER;
+
+    public static void start(CompatActivity<?> activity,
+                             BluetoothReceiverListener listener) {
         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.BLUETOOTH_SCAN)
                 == PackageManager.PERMISSION_GRANTED) {
-            receiverListener = listener;
+            LISTENER = listener;
 
-            activity.registerReceiver(this, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_STARTED));
-            activity.registerReceiver(this, new IntentFilter(BluetoothDevice.ACTION_FOUND));
+            activity.registerReceiver(RECEIVER, new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_STARTED));
+            activity.registerReceiver(RECEIVER, new IntentFilter(BluetoothDevice.ACTION_FOUND));
 
             BluetoothAdapter.getDefaultAdapter().startDiscovery();
         }
     }
 
-    public void cancel() {
+    public static void cancel(CompatActivity<?> activity) {
         if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.BLUETOOTH_SCAN)
                 == PackageManager.PERMISSION_GRANTED) {
             if (BluetoothAdapter.getDefaultAdapter().isDiscovering()) {
