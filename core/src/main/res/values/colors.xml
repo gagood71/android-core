@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- https://coolors.co/ -->
-    <color name="color_transparent">#00000000</color>
-    <color name="color_white">#FFFFFF</color>
-
-    <color name="normal_main_color">#00A0FF</color>
-
-    <color name="normal_button_unable_color">#00A0FF</color>
-    <color name="normal_button_enable_color">#00FFFF</color>
-    <color name="normal_button_font_color">#FFFFFF</color>
-
-    <color name="normal_dark_font_color">#323232</color>
-    <color name="normal_light_font_color">#C8C8C8</color>
-
-    <color name="normal_background_gradient_start">#969696</color>
-    <color name="normal_background_gradient_center">#C8C8C8</color>
-    <color name="normal_background_gradient_end">#969696</color>
-
-    <color name="normal_bottom_line_color">#00A0FF</color>
-    <color name="normal_loading_color">#141414</color>
-    <color name="normal_warning_color">#FFC80A</color>
+    <color name="battleship_gray">#969696</color>
+    <color name="celestial_blue">#00A0FF</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="jet">#323232</color>
+    <color name="mikado_yellow">#FFC80A</color>
+    <color name="night">#141414</color>
+    <color name="silver">#C8C8C8</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
 </resources>

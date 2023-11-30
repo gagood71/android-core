@@ -15,9 +15,9 @@ import com.google.android.material.tabs.TabLayout;
 
 @SuppressWarnings("rawtypes")
 public abstract class Pager extends NormalLinearLayout {
-    protected ViewPager viewPager;
-
     protected TabLayout tabLayout;
+
+    protected ViewPager viewPager;
 
     public Pager(Context context) {
         super(context);
@@ -49,6 +49,10 @@ public abstract class Pager extends NormalLinearLayout {
     }
 
     public abstract void initViewPager(PageAdapter adapter, PageChangeListener listener);
+
+    public TabLayout getTabLayout() {
+        return tabLayout;
+    }
 
     public ViewPager getViewPager() {
         return viewPager;

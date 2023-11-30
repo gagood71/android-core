@@ -4,17 +4,16 @@ import com.core.R;
 
 public class Configuration {
     public static final class Color {
-        public static final int NORMAL_MAIN_COLOR = R.color.normal_main_color;
+        public static final int CELESTIAL_BLUE = R.color.celestial_blue;
+        public static final int CYAN = R.color.cyan;
+        public static final int JET = R.color.jet;
+        public static final int MIKADO_YELLOW = R.color.mikado_yellow;
+        public static final int NIGHT = R.color.night;
+        public static final int SILVER = R.color.silver;
+        public static final int WHITE = R.color.white;
 
         public static final int NORMAL_BUTTON_UNABLE = R.drawable.normal_button_unable;
         public static final int NORMAL_BUTTON_ENABLE = R.drawable.normal_button_enable;
-        public static final int NORMAL_BUTTON_FONT_COLOR = R.color.normal_button_font_color;
-
-        public static final int NORMAL_DARK_FONT_COLOR = R.color.normal_dark_font_color;
-        public static final int NORMAL_LIGHT_FONT_COLOR = R.color.normal_light_font_color;
-
-        public static final int NORMAL_BOTTOM_LINE_COLOR = R.color.normal_bottom_line_color;
-        public static final int NORMAL_WARNING_COLOR = R.color.normal_warning_color;
     }
 
     public static final class String {

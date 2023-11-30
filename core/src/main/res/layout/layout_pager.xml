@@ -9,11 +9,13 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Normal.Theme"
-        android:background="@color/normal_main_color"
-        app:tabIconTint="@color/color_white"
-        app:tabTextColor="@color/color_white"
-        app:tabSelectedTextColor="@color/color_white" />
+        android:theme="@style/App.Theme"
+        android:background="@color/celestial_blue"
+        android:contentDescription="tab_layout"
+        app:tabIndicatorHeight="@dimen/dp_2"
+        app:tabIndicatorColor="@color/cyan"
+        app:tabTextAppearance="@style/App.TextAppearance"
+        app:tabSelectedTextColor="@color/white" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
