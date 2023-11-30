@@ -11,7 +11,7 @@ import com.core.R;
 import com.core.views.layouts.linear.NormalLinearLayout;
 
 public class BottomLine extends NormalLinearLayout {
-    protected LinearLayout viewLine;
+    protected LinearLayout lineLayout;
 
     public BottomLine(Context context) {
         super(context);
@@ -31,7 +31,7 @@ public class BottomLine extends NormalLinearLayout {
 
     @Override
     protected void initView(View view) {
-        viewLine = view.findViewById(R.id.view_line);
+        lineLayout = view.findViewById(R.id.line_layout);
     }
 
     @Override
@@ -41,6 +41,6 @@ public class BottomLine extends NormalLinearLayout {
 
     @Override
     public void setBackgroundColor(int color) {
-        viewLine.setBackgroundColor(color);
+        lineLayout.setBackgroundColor(color);
     }
 }

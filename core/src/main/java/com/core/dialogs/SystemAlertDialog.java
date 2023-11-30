@@ -10,7 +10,7 @@ import com.core.activities.v1.CompatActivity;
 import com.core.views.NormalText;
 
 public class SystemAlertDialog extends SystemDialog {
-    NormalText systemMessage;
+    NormalText systemMessageText;
 
     public SystemAlertDialog(CompatActivity compatActivity,
                              View.OnClickListener onCancelListener,
@@ -31,8 +31,8 @@ public class SystemAlertDialog extends SystemDialog {
         window.setAttributes(layoutParams);
         window.setGravity(Gravity.CENTER);
 
-        systemMessage = containerView.findViewById(R.id.system_message);
-        systemMessage.setText(activity.getString(R.string.系統訊息));
+        systemMessageText = containerView.findViewById(R.id.system_message_text);
+        systemMessageText.setText(activity.getString(R.string.系統訊息));
     }
 
     @Override

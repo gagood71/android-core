@@ -2,29 +2,20 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <gradient
-                android:startColor="@color/main_button_border_color_start"
-                android:centerColor="@color/main_button_border_center"
-                android:endColor="@color/main_button_border_color_end" />
-            <padding
-                android:left="@dimen/dp_1"
-                android:right="@dimen/dp_1"
-                android:top="@dimen/dp_1"
-                android:bottom="@dimen/dp_1" />
+            <solid android:color="@color/main_color_2" />
             <corners android:radius="@dimen/dp_20" />
         </shape>
     </item>
-    <item>
+    <item
+        android:top="@dimen/dp_2"
+        android:bottom="@dimen/dp_2"
+        android:left="@dimen/dp_2"
+        android:right="@dimen/dp_2">
         <shape android:shape="rectangle">
             <gradient
                 android:startColor="@color/main_button_background_color_start_1"
                 android:centerColor="@color/main_button_background_color_center_1"
                 android:endColor="@color/main_button_background_color_end_1" />
-            <padding
-                android:left="@dimen/dp_1"
-                android:right="@dimen/dp_1"
-                android:top="@dimen/dp_1"
-                android:bottom="@dimen/dp_1" />
             <corners android:radius="@dimen/dp_20" />
         </shape>
     </item>

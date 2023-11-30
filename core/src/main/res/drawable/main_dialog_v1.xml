@@ -6,25 +6,19 @@
                 android:startColor="@color/main_gradient_start"
                 android:centerColor="@color/main_gradient_center"
                 android:endColor="@color/main_gradient_end" />
-            <padding
-                android:left="@dimen/dp_1"
-                android:right="@dimen/dp_1"
-                android:top="@dimen/dp_1"
-                android:bottom="@dimen/dp_1" />
             <corners android:radius="@dimen/dp_24" />
         </shape>
     </item>
-    <item>
+    <item
+        android:top="@dimen/dp_2"
+        android:bottom="@dimen/dp_2"
+        android:left="@dimen/dp_2"
+        android:right="@dimen/dp_2">
         <shape android:shape="rectangle">
             <gradient
                 android:startColor="@color/secondary_gradient_start"
                 android:centerColor="@color/secondary_gradient_center"
                 android:endColor="@color/secondary_gradient_end" />
-            <padding
-                android:left="@dimen/dp_1"
-                android:right="@dimen/dp_1"
-                android:top="@dimen/dp_1"
-                android:bottom="@dimen/dp_1" />
             <corners android:radius="@dimen/dp_24" />
         </shape>
     </item>

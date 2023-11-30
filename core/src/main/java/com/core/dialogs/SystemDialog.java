@@ -16,11 +16,11 @@ public abstract class SystemDialog extends CompatDialog {
     protected View bottomLine1;
     protected View containerView;
 
-    protected LinearLayout titleContainer;
-    protected LinearLayout contentContainer;
+    protected LinearLayout titleLayout;
+    protected LinearLayout contentLayout;
 
-    protected NormalText dialogCancel;
-    protected NormalText dialogOk;
+    protected NormalText cancelText;
+    protected NormalText okText;
 
     public SystemDialog(CompatActivity compatActivity,
                         View.OnClickListener onCancelListener1,
@@ -33,19 +33,19 @@ public abstract class SystemDialog extends CompatDialog {
 
     @Override
     protected void onAfterCreate() {
-        bottomLine1 = mainView.findViewById(R.id.dialog_bottom_line_1);
-        titleContainer = mainView.findViewById(R.id.dialog_title_container);
-        contentContainer = mainView.findViewById(R.id.dialog_content_container);
-        dialogCancel = mainView.findViewById(R.id.dialog_cancel);
-        dialogOk = mainView.findViewById(R.id.dialog_ok);
+        bottomLine1 = mainView.findViewById(R.id.bottom_line_1);
+        titleLayout = mainView.findViewById(R.id.title_layout);
+        contentLayout = mainView.findViewById(R.id.content_layout);
+        cancelText = mainView.findViewById(R.id.cancel_text);
+        okText = mainView.findViewById(R.id.ok_text);
 
-        dialogCancel.setOnClickListener(view -> {
+        cancelText.setOnClickListener(view -> {
             onCancelListener.onClick(view);
 
             dismiss();
         });
 
-        dialogOk.setOnClickListener(view -> {
+        okText.setOnClickListener(view -> {
             onDismissListener.onClick(view);
 
             dismiss();
@@ -54,13 +54,13 @@ public abstract class SystemDialog extends CompatDialog {
         if (getContainerViewId() > 0) {
             containerView = View.inflate(activity, getContainerViewId(), null);
 
-            titleContainer.removeAllViews();
-            titleContainer.setVisibility(View.GONE);
+            titleLayout.removeAllViews();
+            titleLayout.setVisibility(View.GONE);
 
             bottomLine1.setVisibility(View.GONE);
 
-            contentContainer.setVisibility(View.VISIBLE);
-            contentContainer.addView(containerView, 0);
+            contentLayout.setVisibility(View.VISIBLE);
+            contentLayout.addView(containerView, 0);
         }
     }
 
@@ -70,11 +70,11 @@ public abstract class SystemDialog extends CompatDialog {
     }
 
     protected void hideCancelButton() {
-        dialogCancel.setVisibility(View.GONE);
+        cancelText.setVisibility(View.GONE);
     }
 
     protected void hideOkButton() {
-        dialogOk.setVisibility(View.GONE);
+        okText.setVisibility(View.GONE);
     }
 
     protected abstract int getContainerViewId();

@@ -16,26 +16,21 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <LinearLayout
-        android:id="@+id/loading"
+        android:id="@+id/loading_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/main_background_loading"
-        android:alpha="0.5">
+        android:alpha="0.5"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ProgressBar
-                android:layout_width="@dimen/dp_50"
-                android:layout_height="@dimen/dp_50"
-                android:indeterminate="true"
-                android:indeterminateDrawable="@drawable/loading"
-                android:indeterminateDuration="1000"
-                android:indeterminateOnly="true"
-                style="@style/Widget.AppCompat.ProgressBar" />
-        </LinearLayout>
+        <ProgressBar
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/loading"
+            android:indeterminateDuration="1000"
+            android:indeterminateOnly="true"
+            style="@style/Widget.AppCompat.ProgressBar" />
     </LinearLayout>
 </RelativeLayout>

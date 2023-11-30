@@ -22,7 +22,7 @@ import java.util.List;
 
 @SuppressWarnings("rawtypes")
 public abstract class RefreshLayout<A, B extends RecyclerAdapter> extends NormalLinearLayout {
-    protected LinearLayout loading;
+    protected LinearLayout loadingLayout;
 
     protected SwipeRefreshLayout swipeRefreshLayout;
 
@@ -73,22 +73,26 @@ public abstract class RefreshLayout<A, B extends RecyclerAdapter> extends Normal
 
     @Override
     protected void initView(View view) {
-        loading = findViewById(R.id.loading);
-        loading.setVisibility(GONE);
+        loadingLayout = findViewById(R.id.loading_layout);
+        loadingLayout.setVisibility(GONE);
 
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(() -> {
             Log.d("刷新事件", "下拉刷新");
 
-            loading.setVisibility(VISIBLE);
-            swipeRefreshLayout.setVisibility(GONE);
+            loadingLayout.setVisibility(VISIBLE);
+            swipeRefreshLayout.setEnabled(false);
+            recyclerView.setEnabled(false);
+            recyclerView.setNestedScrollingEnabled(false);
 
             onPullRefresh();
 
             new Handler(Looper.getMainLooper()).postDelayed(
                     () -> {
-                        loading.setVisibility(GONE);
-                        swipeRefreshLayout.setVisibility(VISIBLE);
+                        loadingLayout.setVisibility(GONE);
+                        swipeRefreshLayout.setEnabled(true);
+                        recyclerView.setEnabled(true);
+                        recyclerView.setNestedScrollingEnabled(true);
                     },
                     Configuration.Time.TIME_1000
             );
