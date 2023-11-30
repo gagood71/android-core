@@ -23,10 +23,10 @@ public class NormalButton extends AppCompatButton implements TextWatcher {
     protected static final long DELAY_100 = 100;
 
     protected static int UNABLE_BACKGROUND = Configuration.Color.NORMAL_BUTTON_UNABLE;
-    protected static int UNABLE_TEXT_COLOR = Configuration.Color.NORMAL_BUTTON_FONT_COLOR_1;
+    protected static int UNABLE_TEXT_COLOR = Configuration.Color.NORMAL_BUTTON_FONT_COLOR;
 
     protected static int ENABLE_BACKGROUND = Configuration.Color.NORMAL_BUTTON_ENABLE;
-    protected static int ENABLE_TEXT_COLOR = Configuration.Color.NORMAL_BUTTON_FONT_COLOR_2;
+    protected static int ENABLE_TEXT_COLOR = Configuration.Color.NORMAL_BUTTON_FONT_COLOR;
 
     protected ArrayList<EditText> editTexts;
 

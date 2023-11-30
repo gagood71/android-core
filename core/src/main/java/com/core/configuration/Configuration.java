@@ -4,21 +4,17 @@ import com.core.R;
 
 public class Configuration {
     public static final class Color {
+        public static final int NORMAL_MAIN_COLOR = R.color.normal_main_color;
+
         public static final int NORMAL_BUTTON_UNABLE = R.drawable.normal_button_unable;
         public static final int NORMAL_BUTTON_ENABLE = R.drawable.normal_button_enable;
+        public static final int NORMAL_BUTTON_FONT_COLOR = R.color.normal_button_font_color;
 
-        public static final int BASIC_FONT_COLOR_1 = R.color.basic_font_color_1;
-        public static final int BASIC_FONT_COLOR_2 = R.color.basic_font_color_2;
-        public static final int BASIC_FONT_COLOR_3 = R.color.basic_font_color_3;
+        public static final int NORMAL_DARK_FONT_COLOR = R.color.normal_dark_font_color;
+        public static final int NORMAL_LIGHT_FONT_COLOR = R.color.normal_light_font_color;
 
-        public static final int BOTTOM_LINE_COLOR_1 = R.color.bottom_line_color_1;
-        public static final int BOTTOM_LINE_COLOR_2 = R.color.bottom_line_color_2;
-
-        public static final int MAIN_COLOR_1 = R.color.main_color_1;
-        public static final int MAIN_COLOR_2 = R.color.main_color_2;
-
-        public static final int NORMAL_BUTTON_FONT_COLOR_1 = R.color.normal_button_font_color_1;
-        public static final int NORMAL_BUTTON_FONT_COLOR_2 = R.color.normal_button_font_color_2;
+        public static final int NORMAL_BOTTOM_LINE_COLOR = R.color.normal_bottom_line_color;
+        public static final int NORMAL_WARNING_COLOR = R.color.normal_warning_color;
     }
 
     public static final class String {

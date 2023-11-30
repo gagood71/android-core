@@ -2,8 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_enabled="false"
-        android:drawable="@drawable/main_button_unable" />
+        android:color="@color/normal_button_font_color" />
     <item
         android:state_enabled="true"
-        android:drawable="@drawable/main_button_enable" />
+        android:color="@color/normal_button_font_color" />
 </selector>

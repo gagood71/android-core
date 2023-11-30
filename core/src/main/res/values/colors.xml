@@ -1,52 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- https://coolors.co/ -->
     <color name="color_transparent">#00000000</color>
+    <color name="color_white">#FFFFFF</color>
 
-    <color name="basic_font_color_1">#323232</color>
-    <color name="basic_font_color_2">#646464</color>
-    <color name="basic_font_color_3">#C8C8C8</color>
+    <color name="normal_main_color">#00A0FF</color>
 
-    <color name="bottom_line_color_1">#323232</color>
-    <color name="bottom_line_color_2">#C8C8C8</color>
+    <color name="normal_button_unable_color">#00A0FF</color>
+    <color name="normal_button_enable_color">#00FFFF</color>
+    <color name="normal_button_font_color">#FFFFFF</color>
 
-    <color name="main_color_1">#323232</color>
-    <color name="main_color_2">#FFC80A</color>
+    <color name="normal_dark_font_color">#323232</color>
+    <color name="normal_light_font_color">#C8C8C8</color>
 
-    <color name="main_gradient_start">#C8C8C8</color>
-    <color name="main_gradient_center">#C8C8C8</color>
-    <color name="main_gradient_end">#C8C8C8</color>
+    <color name="normal_background_gradient_start">#969696</color>
+    <color name="normal_background_gradient_center">#C8C8C8</color>
+    <color name="normal_background_gradient_end">#969696</color>
 
-    <color name="main_background_gradient_start">#969696</color>
-    <color name="main_background_gradient_center">#C8C8C8</color>
-    <color name="main_background_gradient_end">#969696</color>
-
-    <color name="main_button_border_color_start">#C8C8C8</color>
-    <color name="main_button_border_color_start_2">#323232</color>
-
-    <color name="main_button_border_center">#C8C8C8</color>
-    <color name="main_button_border_center_2">#323232</color>
-
-    <color name="main_button_border_color_end">#C8C8C8</color>
-    <color name="main_button_border_color_end_2">#323232</color>
-
-    <color name="main_button_background_color_start_1">#323232</color>
-    <color name="main_button_background_color_start_2">#C8C8C8</color>
-
-    <color name="main_button_background_color_center_1">#323232</color>
-    <color name="main_button_background_color_center_2">#C8C8C8</color>
-
-    <color name="main_button_background_color_end_1">#323232</color>
-    <color name="main_button_background_color_end_2">#C8C8C8</color>
-
-    <color name="main_button_font_color_1">#C8C8C8</color>
-    <color name="main_button_font_color_2">#323232</color>
-
-    <color name="main_loading_color">#141414</color>
-
-    <color name="secondary_gradient_start">#323232</color>
-    <color name="secondary_gradient_center">#323232</color>
-    <color name="secondary_gradient_end">#323232</color>
-
-    <color name="normal_button_font_color_1">#C8C8C8</color>
-    <color name="normal_button_font_color_2">#323232</color>
+    <color name="normal_bottom_line_color">#00A0FF</color>
+    <color name="normal_loading_color">#141414</color>
+    <color name="normal_warning_color">#FFC80A</color>
 </resources>

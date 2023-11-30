@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/main_dialog_v1">
+    android:background="@drawable/normal_dialog">
 
     <LinearLayout
         android:id="@+id/title_layout"
@@ -18,7 +18,7 @@
         <com.core.views.NormalText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/basic_font_color_3"
+            android:textColor="@color/normal_dark_font_color"
             tools:text="標題" />
     </LinearLayout>
 
@@ -26,7 +26,7 @@
         android:id="@+id/bottom_line_1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_1"
-        android:background="@color/bottom_line_color_2" />
+        android:background="@color/normal_main_color" />
 
     <LinearLayout
         android:id="@+id/content_layout"
@@ -39,14 +39,14 @@
         <com.core.views.NormalText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/basic_font_color_3"
+            android:textColor="@color/normal_dark_font_color"
             tools:text="內文" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_1"
-        android:background="@color/bottom_line_color_2" />
+        android:background="@color/normal_main_color" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,13 +62,13 @@
             android:gravity="center"
             android:padding="@dimen/dp_8"
             android:text="@string/取消"
-            android:textColor="@color/basic_font_color_3"
+            android:textColor="@color/normal_dark_font_color"
             tools:text="@string/取消" />
 
         <View
             android:layout_width="@dimen/dp_1"
             android:layout_height="match_parent"
-            android:background="@color/bottom_line_color_2" />
+            android:background="@color/normal_main_color" />
 
         <com.core.views.NormalText
             android:id="@+id/ok_text"
@@ -78,7 +78,7 @@
             android:gravity="center"
             android:padding="@dimen/dp_8"
             android:text="@string/確認"
-            android:textColor="@color/basic_font_color_3"
+            android:textColor="@color/normal_dark_font_color"
             tools:text="@string/確認" />
     </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Normal.Theme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="Normal.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="background">@color/normal_main_color</item>
+        <item name="tabIndicator">@color/color_white</item>
+        <item name="tabTextColor">@color/color_white</item>
+        <item name="tabSelectedTextColor">@color/color_white</item>
+    </style>
+</resources>

@@ -2,6 +2,7 @@ package com.core.pager;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
@@ -32,6 +33,14 @@ public abstract class Pager extends NormalLinearLayout {
 
     public Pager(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+    @Override
+    public void initView(View view) {
+        viewPager = view.findViewById(R.id.view_pager);
+        tabLayout = view.findViewById(R.id.tab_layout);
+
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
