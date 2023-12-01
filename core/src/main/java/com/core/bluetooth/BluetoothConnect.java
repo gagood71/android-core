@@ -9,16 +9,19 @@ import androidx.annotation.RequiresPermission;
 public class BluetoothConnect {
     public static final String OBD = "OBD";
 
+    private static BluetoothRunnable RUNNABLE;
+
     @RequiresPermission("android.permission.BLUETOOTH_CONNECT")
     public static void connect(String address,
                                String type,
                                BluetoothListener listener) {
         if (type.equals(OBD)) {
-            new Thread(new BluetoothRunnable(address, listener) {
+            RUNNABLE = new BluetoothRunnable(address, listener) {
                 @RequiresPermission("android.permission.BLUETOOTH_CONNECT")
                 @Override
                 protected BluetoothSocket getBluetoothSocket() {
-                    BluetoothDevice device = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(address);
+                    BluetoothDevice device = BluetoothAdapter.getDefaultAdapter()
+                            .getRemoteDevice(address);
 
                     try {
                         return device.createInsecureRfcommSocketToServiceRecord(uuid);
@@ -28,7 +31,15 @@ public class BluetoothConnect {
                         return null;
                     }
                 }
-            }).start();
+            };
+        }
+
+        new Thread(RUNNABLE).start();
+    }
+
+    public static void disconnect() {
+        if (RUNNABLE != null) {
+            RUNNABLE.disconnect();
         }
     }
 }

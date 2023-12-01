@@ -10,8 +10,6 @@ import androidx.annotation.RequiresPermission;
 import com.core.configuration.Configuration;
 import com.core.sql.lite.SQLiteManager;
 
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.UUID;
@@ -21,9 +19,6 @@ public abstract class BluetoothRunnable implements Runnable {
     protected UUID uuid;
 
     protected BluetoothSocket bluetoothSocket;
-
-    protected InputStream inputStream;
-    protected OutputStream outputStream;
 
     protected BluetoothListener listener;
 
@@ -70,9 +65,6 @@ public abstract class BluetoothRunnable implements Runnable {
                 bluetoothSocket.connect(); // 這裡進行連接
 
                 timer.schedule(timerTask, Configuration.Time.TIME_10000);
-
-                inputStream = bluetoothSocket.getInputStream();
-                outputStream = bluetoothSocket.getOutputStream();
             }
         } catch (Exception e) {
             disconnect();
@@ -86,14 +78,12 @@ public abstract class BluetoothRunnable implements Runnable {
         }
     }
 
-    protected void disconnect() {
+    public void disconnect() {
         if (bluetoothSocket != null) {
             try {
                 bluetoothSocket.close();
 
                 bluetoothSocket = null;
-                inputStream = null;
-                outputStream = null;
             } catch (Exception e) {
                 e.printStackTrace();
             }
