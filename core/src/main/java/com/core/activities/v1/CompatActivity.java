@@ -47,7 +47,9 @@ public abstract class CompatActivity<T extends ActivityController>
         super.onStart();
 
         if (!isCreated) {
-            controller.onAfterCreate();
+            if (controller != null) {
+                controller.onAfterCreate();
+            }
         }
 
         isCreated = true;
@@ -57,7 +59,9 @@ public abstract class CompatActivity<T extends ActivityController>
     protected void onPause() {
         super.onPause();
 
-        controller.onPause();
+        if (controller != null) {
+            controller.onPause();
+        }
     }
 
     @Override
@@ -68,7 +72,9 @@ public abstract class CompatActivity<T extends ActivityController>
             dialog.dismiss();
         }
 
-        controller.onDestroy();
+        if (controller != null) {
+            controller.onDestroy();
+        }
     }
 
     @Override
@@ -77,7 +83,12 @@ public abstract class CompatActivity<T extends ActivityController>
                                     @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        controller.onActivityResult(requestCode, resultCode, data);
+        if (controller != null) {
+            controller.onActivityResult(
+                    requestCode,
+                    resultCode,
+                    data);
+        }
     }
 
     @Override
@@ -86,7 +97,12 @@ public abstract class CompatActivity<T extends ActivityController>
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        controller.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (controller != null) {
+            controller.onRequestPermissionsResult(
+                    requestCode,
+                    permissions,
+                    grantResults);
+        }
     }
 
     public void attach(Dialog dialog) {

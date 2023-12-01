@@ -39,6 +39,7 @@ public class Configuration {
         public static final long TIME_1000 = 1000;
         public static final long TIME_10000 = 10000;
         public static final long TIME_20000 = 20000;
+        public static final long TIME_50000 = 50000;
         public static final long TIME_60000 = 60000;
     }
 

@@ -211,4 +211,35 @@ public class BluetoothHelper extends SQLiteHelper<Bluetooth> {
 
         return name;
     }
+
+    public String getDeviceAddress() {
+        String name = "NULL";
+
+        if (getReadableDatabase() != null) {
+            try {
+                SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+                Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + getTableName() +
+                        " WHERE id = ?", new String[]{"1"});
+
+                if (cursor == null) {
+                    return name;
+                }
+
+                cursor.moveToFirst();
+
+                int columIndex;
+                if (cursor.getColumnIndex(ADDRESS_FIELD) > 0) {
+                    columIndex = cursor.getColumnIndex(ADDRESS_FIELD);
+
+                    name = cursor.getString(columIndex);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+
+                SQLiteManager.getLog().insert(e.getMessage());
+            }
+        }
+
+        return name;
+    }
 }

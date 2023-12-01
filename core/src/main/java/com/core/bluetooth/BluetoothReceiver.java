@@ -30,14 +30,13 @@ public class BluetoothReceiver {
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
                         == PackageManager.PERMISSION_GRANTED) {
                     if (device != null) {
-                        if (device.getBondState() == BluetoothDevice.BOND_NONE) {
-                            // 設備未配對
-                            String message = "{DEVICE_STATE：BOND_NONE" +
-                                    ",DEVICE_NAME：" + device.getName() +
-                                    ",DEVICE_ADDRESS：" + device.getAddress() + "}";
+                        String message = "{DEVICE_STATE：BOND_NONE" +
+                                ",DEVICE_NAME：" + device.getName() +
+                                ",DEVICE_ADDRESS：" + device.getAddress() + "}";
 
-                            Log.e(getClass().getName(), message);
+                        Log.e(getClass().getName(), message);
 
+                        if (device.getName() != null) {
                             LISTENER.onActionFound(device);
                         }
                     }
