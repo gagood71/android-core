@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import com.core.CompatApp;
+import com.core.R;
 import com.core.sql.lite.models.Log;
 import com.core.utils.DateUtil;
 
@@ -44,7 +46,7 @@ public class LogHelper extends SQLiteHelper<Log> {
     protected ContentValues getCreateValues() {
         ContentValues values = new ContentValues();
         values.put("id", "1");
-        values.put(MESSAGE_FIELD, "系統初始化");
+        values.put(MESSAGE_FIELD, CompatApp.getContext().getString(R.string.系統初始化));
         values.put(TIME_FIELD, DateUtil.getCurrentDate());
 
         return values;
