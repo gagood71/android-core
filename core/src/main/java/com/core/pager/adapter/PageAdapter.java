@@ -11,7 +11,7 @@ import com.core.fragment.DefaultFragment;
 
 import java.util.List;
 
-@SuppressWarnings({"rawtypes", "deprecation"})
+@SuppressWarnings({"deprecation"})
 public class PageAdapter<T extends DefaultFragment> extends FragmentStatePagerAdapter {
     protected List<T> fragments;
 
