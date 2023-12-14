@@ -26,6 +26,7 @@ public abstract class DefaultRelativeLayout extends RelativeLayout
         super(context, attrs);
 
         init();
+        initAttributeSet(context, attrs);
     }
 
     public DefaultRelativeLayout(Context context,
@@ -34,6 +35,7 @@ public abstract class DefaultRelativeLayout extends RelativeLayout
         super(context, attrs, defStyleAttr);
 
         init();
+        initAttributeSet(context, attrs);
     }
 
     public DefaultRelativeLayout(Context context,
@@ -43,6 +45,7 @@ public abstract class DefaultRelativeLayout extends RelativeLayout
         super(context, attrs, defStyleAttr, defStyleRes);
 
         init();
+        initAttributeSet(context, attrs);
     }
 
     @Override
@@ -119,6 +122,9 @@ public abstract class DefaultRelativeLayout extends RelativeLayout
 
     private Toast makeText(int resourceId) {
         return Toast.makeText(getContext(), resourceId, Toast.LENGTH_SHORT);
+    }
+
+    protected void initAttributeSet(Context context, AttributeSet attributeSet) {
     }
 
     protected void showCenterToast(String text) {

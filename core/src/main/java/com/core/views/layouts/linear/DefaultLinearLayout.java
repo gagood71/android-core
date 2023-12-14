@@ -1,6 +1,7 @@
 package com.core.views.layouts.linear;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -16,6 +17,8 @@ public abstract class DefaultLinearLayout extends LinearLayout
         implements CompatLayout {
     protected View mainView;
 
+    protected TypedArray typedArray;
+
     public DefaultLinearLayout(Context context) {
         super(context);
 
@@ -26,6 +29,7 @@ public abstract class DefaultLinearLayout extends LinearLayout
         super(context, attrs);
 
         init();
+        initAttributeSet(context, attrs);
     }
 
     public DefaultLinearLayout(Context context,
@@ -34,6 +38,7 @@ public abstract class DefaultLinearLayout extends LinearLayout
         super(context, attrs, defStyleAttr);
 
         init();
+        initAttributeSet(context, attrs);
     }
 
     public DefaultLinearLayout(Context context,
@@ -43,6 +48,7 @@ public abstract class DefaultLinearLayout extends LinearLayout
         super(context, attrs, defStyleAttr, defStyleRes);
 
         init();
+        initAttributeSet(context, attrs);
     }
 
     @Override
@@ -119,6 +125,9 @@ public abstract class DefaultLinearLayout extends LinearLayout
 
     private Toast makeText(int resourceId) {
         return Toast.makeText(getContext(), resourceId, Toast.LENGTH_SHORT);
+    }
+
+    protected void initAttributeSet(Context context, AttributeSet attributeSet) {
     }
 
     protected void showCenterToast(String text) {
