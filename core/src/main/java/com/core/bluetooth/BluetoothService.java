@@ -37,29 +37,16 @@ public class BluetoothService {
 
     public static void register(CompatActivity<?> activity,
                                 ActivityResultCallback callback) {
-        // 先檢查藍芽是否開啟，再檢查權限
-        enable(activity, new ActivityResultCallback() {
-            @Override
-            public void granted() {
-                String[] permissions = getPermissions();
+        String[] permissions = getPermissions();
 
-                activity.getResultLauncher(callback);
-
-                if (!activity.isPermissionsGranted(permissions)) {
-                    activity.registerPermissions(
-                            permissions,
-                            Configuration.Permission.BLUETOOTH_PERMISSIONS
-                    );
-                } else {
-                    callback.granted();
-                }
-            }
-
-            @Override
-            public void denied() {
-                callback.denied();
-            }
-        });
+        if (!activity.isPermissionsGranted(permissions)) {
+            activity.registerPermissions(
+                    permissions,
+                    Configuration.Permission.BLUETOOTH_PERMISSIONS
+            );
+        } else {
+            callback.granted();
+        }
     }
 
     public static List<BluetoothDevice> getBondedDevices(CompatActivity<?> activity) {
