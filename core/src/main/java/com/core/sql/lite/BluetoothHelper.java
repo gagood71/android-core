@@ -69,6 +69,13 @@ public class BluetoothHelper extends SQLiteHelper<Bluetooth> {
     }
 
     @Override
+    public void drop() {
+        // 刪除所有資料
+        SQLiteDatabase database = getWritableDatabase();
+        database.delete(getTableName(), null, null);
+    }
+
+    @Override
     public List<Bluetooth> getData() {
         dataList = new ArrayList<>();
 

@@ -56,5 +56,7 @@ public abstract class SQLiteHelper<T> extends SQLiteOpenHelper {
 
     protected abstract String[] getTableFields();
 
+    public abstract void drop();
+
     public abstract List<T> getData();
 }

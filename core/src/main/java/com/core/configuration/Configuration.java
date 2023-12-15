@@ -26,6 +26,7 @@ public class Configuration {
 
         public static final int 確認 = R.string.確認;
         public static final int 取消 = R.string.取消;
+        public static final int 清除 = R.string.清除;
         public static final int 警告 = R.string.警告;
         public static final int 連接 = R.string.連接;
         public static final int 連接中 = R.string.連接中;

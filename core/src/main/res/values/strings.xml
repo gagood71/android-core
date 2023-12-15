@@ -11,6 +11,7 @@
     <!-- 常用用詞 -->
     <string name="確認">確認</string>
     <string name="取消">取消</string>
+    <string name="清除">清除</string>
     <string name="警告">警告</string>
     <string name="連接">連接</string>
     <string name="連接中">連接中</string>

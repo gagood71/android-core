@@ -63,6 +63,13 @@ public class LogHelper extends SQLiteHelper<Log> {
     }
 
     @Override
+    public void drop() {
+        // 刪除所有資料
+        SQLiteDatabase database = getWritableDatabase();
+        database.delete(getTableName(), "id != ?", new String[]{"1"});
+    }
+
+    @Override
     public List<Log> getData() {
         dataList = new ArrayList<>();
 
