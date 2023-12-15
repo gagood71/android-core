@@ -2,7 +2,6 @@ package com.core.dialogs.v2;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.View;
 
 import com.core.activities.v1.CompatActivity;
 import com.core.controllers.DialogController;
@@ -22,7 +21,7 @@ public abstract class CompatDialog<T extends DialogController> extends DefaultDi
         super.onCreate(savedInstanceState);
 
         try {
-            setContentView(View.inflate(activity, getViewId(), null));
+            setContentView(getViewId());
             setOnDismissListener(this);
 
             activity.attach(this);
