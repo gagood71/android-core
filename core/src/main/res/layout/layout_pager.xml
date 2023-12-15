@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/App.Theme"
-        android:background="@color/celestial_blue"
+        android:background="@drawable/tab_layout"
         android:contentDescription="tab_layout"
         app:tabIndicatorHeight="@dimen/dp_2"
-        app:tabIndicatorColor="@color/cyan"
+        app:tabIndicatorColor="@color/white"
         app:tabTextAppearance="@style/App.TextAppearance"
         app:tabSelectedTextColor="@color/white" />
 
