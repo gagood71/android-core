@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- https://coolors.co/ -->
+    <color name="battleship_gray">#848482</color>
+    <color name="celestial_blue">#4997D0</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="jet">#343434</color>
+    <color name="mikado_yellow">#FFC40C</color>
+    <color name="night">#111111</color>
+    <color name="platinum">#E5E4E2</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_smoke">#F5F5F5</color>
+</resources>

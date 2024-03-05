@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 系統用詞 -->
+    <string name="系統">系統</string>
+    <string name="系統初始化">系統初始化</string>
+    <string name="系統設定">系統設定</string>
+    <string name="系統提示">系統提示</string>
+    <string name="系統訊息">系統訊息</string>
+    <string name="系統記錄">系統記錄</string>
+
+    <!-- 常用用詞 -->
+    <string name="確認">確認</string>
+    <string name="取消">取消</string>
+    <string name="清除">清除</string>
+    <string name="警告">警告</string>
+    <string name="連接">連接</string>
+    <string name="連接中">連接中</string>
+    <string name="連接成功">連接成功，開始使用</string>
+    <string name="連接失敗">連接失敗，請稍後再試</string>
+</resources>
